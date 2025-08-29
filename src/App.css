@@ -1,0 +1,210 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 5px;  /* space between inputs */
+}
+/*
+   Reset defaults and make layout predictable
+   - box-sizing: border-box → padding/border included in width/height
+*/
+* {
+  box-sizing: border-box;
+}
+header {
+  height: 50px;    
+  padding:5px;            /* Header is 50 pixels tall */
+  line-height: 50px;           /* Vertically centers text inside header */
+  background: blue;  
+  color: white;                /* White text for contrast */
+}
+/*
+   Set up the entire page and root container
+   - 100% height for full viewport control
+   - Remove default margin/padding
+   - Apply clean, modern font stack
+   - Light gradient background
+   - Dark text for readability
+*/
+button[type="submit"] {
+  grid-column: 1 / -1; /* spans across both columns */
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+header {
+  height: 50px;                /* Header is 50 pixels tall */
+  line-height: 50px;           /* Vertically centers text inside header */
+  background: blue;  /* Red to orange gradient background */
+  color: white;                /* White text for contrast */
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #eef3ff 0%, #f7f9fc 100%);
+  color: #111827; /* dark readable text */
+}
+
+/*
+   Main wrapper for centering the form
+   - display:flex → use flexbox
+   - align-items:center → vertical center
+   - justify-content:center → horizontal center
+   - min-height:100vh → stretch across viewport height
+   - width:100vw → stretch across viewport width
+   - padding for breathing space on small screens
+*/
+.page {
+  display: flex;
+   
+  min-height: 100vh;          
+  width: 100vw;              
+  padding: 20px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 5px;  /* space between inputs */
+}
+/*
+   Card container for the form
+   - max-width: 460px keeps it compact
+   - white background for contrast
+   - rounded corners for modern look
+   - internal padding for spacing
+   - box-shadow for a subtle elevation effect
+*/
+.card {
+  width: 100vw;
+  max-width: 100vw;
+  background: #ffffff;
+  border-radius: 0px;
+  padding: 28px 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+/*
+   Heading style
+   - Centered, bold, slightly larger text
+   - Darker shade for emphasis
+*/
+h2 {
+  margin: 0 0 20px 0;
+ 
+  font-size: 22px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/*
+   Form group spacing
+   - margin-bottom adds space between inputs
+*/
+.form-group {
+  margin-bottom: 16px;
+}
+
+/*
+   Label styling
+   - Display as block so it sits above input
+   - Slightly bold and smaller font size
+   - Darker text color
+*/
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #0b1324;
+  font-size: 14px;
+}
+
+/*
+   Input fields
+   - Full width, padded for comfortable typing
+   - Border + rounded corners
+   - Dark text color, subtle light background
+   - Smooth transition for focus/hover states
+*/
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  color: #111;            
+  background: #fbfbfd;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Placeholder text styling (lighter gray) */
+input::placeholder {
+  color: #6b7280;
+}
+
+/*
+   Input focus state
+   - Blue border + subtle glow effect
+   - Helps user know which field is active
+*/
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/*
+   Validation error input styling
+   - Red border when field is invalid
+*/
+input[aria-invalid="true"] {
+  border-color: #ef4444;
+}
+
+/*
+   Error message text
+   - Shown under invalid fields
+   - Red, bold, smaller font size
+*/
+.error {
+  display: block;
+  margin-top: 6px;
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/*
+   Submit button styling
+   - Full width button
+   - Blue background with white text
+   - Rounded corners + shadow
+   - Smooth hover/active animations
+*/
+button {
+  width: 20%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+}
+
+/* Hover state for button */
+button:hover {
+  background: #1d4ed8;
+}
+
+/* Active state: slight downward press effect */
+button:active {
+  transform: translateY(1px);
+}
+
+/*
